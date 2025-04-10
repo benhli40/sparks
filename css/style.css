@@ -1,0 +1,237 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fffbe6;
+  color: #333;
+  padding: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+/* === Base Theme: Light === */
+body {
+  background: #fffbe6;
+  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* === Dark Theme === */
+body.dark {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+body.dark #spark-input,
+body.dark .filter-btn,
+body.dark .spark-list li {
+  background: #2b2b2b;
+  color: #eee;
+  border-color: #444;
+}
+
+body.dark #add-spark,
+body.dark .filter-btn.active {
+  background: #ffc107;
+  color: #000;
+}
+
+/* === Calm Theme === */
+body.calm {
+  background-color: #edf6f9;
+  color: #2e3a59;
+}
+
+body.calm .spark-list li {
+  background: #ffffff;
+  border-left-color: #90e0ef;
+}
+
+body.calm .filter-btn.active,
+body.calm #add-spark {
+  background-color: #00b4d8;
+  color: white;
+}
+
+body.calm #spark-input {
+  border-color: #90e0ef;
+  background-color: #f1fcff;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.input-area {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#spark-input {
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  width: 60%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#add-spark {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: #ffb700;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#add-spark:hover {
+  background: #ffa500;
+}
+
+.spark-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.spark-list li {
+  background: #fff;
+  border-left: 4px solid #ffb700;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  animation: slideFadeIn 0.3s ease;
+}
+
+.spark-list li.added {
+  animation: slideFadeIn 0.3s ease;
+  background-color: #fff8d6;
+  border-left-color: #ffc107;
+}
+
+.spark-list .delete-btn {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  background: transparent;
+  border: none;
+  color: #888;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.spark-list .delete-btn:hover {
+  color: #ff4d4d;
+}
+
+.spark-tag {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.tag-filters {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.filter-btn {
+  background: #eee;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  margin: 0 0.3rem;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #ffb700;
+  color: #000;
+}
+
+/* === Spark Entry Animation === */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.spark-counter {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+#spark-archive {
+  padding: 1rem;
+  display: none;
+  border-top: 1px solid #ccc;
+  margin-top: 2rem;
+}
+
+#spark-archive.visible {
+  display: block;
+}
+
+.archive-day h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* === Tag Coloring === */
+.spark-tag {
+  padding: 0.2rem 0.5rem;
+  margin-left: 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* 🔥 Fire tag */
+.tag-fire {
+  color: #b30000;
+  background: #ffe5e5;
+  border: 1px solid #ff9999;
+}
+
+/* 💡 Idea tag */
+.tag-idea {
+  color: #996600;
+  background: #fffacc;
+  border: 1px solid #ffd966;
+}
+
+/* 💭 Thought tag */
+.tag-thought {
+  color: #003366;
+  background: #e0f7ff;
+  border: 1px solid #99ddff;
+}
+
+.inspiration-box {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #444;
+  padding: 0.5rem;
+  border-left: 3px solid #ccc;
+  background: #f9f9f9;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffb700" />
+  <title>Sparks – Micro Idea Collector</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Sparks</h1>
+    <p>Capture flashes of inspiration in 10 words or less 💡</p>
+    <div id="spark-counter" class="spark-counter"></div>
+    <button id="toggle-theme">Toggle Theme</button>
+    <button id="view-archive">📅 View Archive</button>
+  </header>
+
+  <main>
+    <div class="input-area">
+      <input type="text" id="spark-input" placeholder="Write your spark..." maxlength="80" />
+      <button id="add-spark">➕</button>
+    </div>
+
+    <button id="inspire-btn">✨ Inspire Me</button>
+    <div id="inspiration-box" class="inspiration-box"></div>
+
+    <div class="tag-filters">
+      <button data-tag="all" class="filter-btn active">All</button>
+      <button data-tag="🔥" class="filter-btn">🔥</button>
+      <button data-tag="💡" class="filter-btn">💡</button>
+      <button data-tag="💭" class="filter-btn">💭</button>
+    </div>
+
+    <ul id="spark-list" class="spark-list"></ul>
+  </main>
+
+  <section id="spark-archive" class="hidden"></section>
+
+  <script type="module" src="js/sparks.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>
